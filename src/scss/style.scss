@@ -1,28 +1,49 @@
 @import 'global';
 @import 'variables';
 
-
-body{
+.page1-body{
    width: 100%;
-   padding: 2vw 5vw;
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: center;
+   background-color: $black;
+}
+
+header{
+    width: 100%;
+    background-color: $purpleHaze;
+    padding: 1rem 3rem;
+    display: flex;
+    margin-bottom: 5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .logo{
-    font-size: 3rem;
+    font-size: 2rem;
     margin: 1rem;
+    margin-bottom: 5px;
     font-weight: 600;
+    color: $purple;
 }
+
+.credits{
+    color: $purple;
+    margin: 1rem;
+    margin-top: 5px;
+    font-size: .8rem;
+}
+
 
 .search-field{
     font-size: 1rem;
     padding: .3rem;
     margin: .5rem;
-    border: 1px solid black;
+    border: 1px solid transparent;
     border-radius: .3rem;
+    color: black;
 }
 
 .search-btn{
@@ -30,23 +51,21 @@ body{
     font-size: 1rem;
     padding: .3rem .5rem;
     margin: .5rem;
-    border: 1px solid black;
+    border: 1px solid transparent;
     border-radius: .3rem;
 }
 
-.credits{
-    margin: 1rem 0rem;
-    font-size: .8rem;
-}
 
 .loading{
     width: 30px;
     height: 30px;
-    border: 5px solid black;
+    margin: 1rem;
+    border: 5px solid white;
     border-radius: 50%;
-    border-top: 5px solid gray;
+    border-top: 5px solid red;
     background-color: transparent;
-    display: none;
+    animation: 1s rotation linear infinite;
+    // display: none;
 }
 
 @keyframes rotation{
@@ -58,73 +77,193 @@ body{
     }
 }
 
-.error-msg{
-    font-size: 1.2rem;
-    font-weight: 400;
-    display: none;
+.page1-container{
+    width: 100%;
+    background-color: $black;
+    overflow-x: hidden;
 }
 
-.section-container{
-    border: 2px solid black;
-    border-radius: .3rem;
-    margin: 2rem;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(231, 231, 231);
-    visibility: hidden;
-}
-
-.show-heading{
-    font-size: 2rem;
-    font-size: 500;
+.show-holding-container,
+.anime-holding-container{
+    width: 98%;
     margin: 1rem;
+    padding: 1rem;
+    padding-left: 0;
+    position: relative;
+}
+
+.show-holding-container::before{
+    position: absolute;
+    content: 'popular shows';
+    top: -10px;
+    left: 50px;
+    color: white;
+    font-size: 2rem;
+}
+
+.anime-holding-container::before{
+    position: absolute;
+    content: 'popular anime';
+    top: -10px;
+    left: 50px;
+    color: white;
+    font-size: 2rem;
+}
+
+.popular-show-container,
+.popular-anime-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    align-items: center;
+    padding: 1rem;
+    padding-left: 0;
+    margin: 1rem; 
+    margin-left: 0;
+    overflow: scroll hidden;
+
+    // padding for last flex item:
+    &::after{
+        content: '';
+        padding: 1rem;
+    }
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
+}
+
+.search-results-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+
+.show-container{
+    width: 200px;
+    height: auto;
+    margin: 2rem;
+    border-radius: 10px;
+    background-color: $darkBlue;
+    transform: scale(.97);
+    transition: transform 300ms ease;
+
+    &:hover{
+        transform: scale(1);
+    }
+
+    &:hover .show-title{
+        color: plum;
+    }
+
+}
+
+.show-contents{
+    width: 200px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.show-title{
+    width: 100%;
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: $purpleHaze;
+    transition: color 200ms ease;
+}
+
+.show-rating{
+    color: $purpleHaze;
+    font-size: 1rem;
 }
 
 .show-img{
-    margin: 1rem;
-    border-radius: .3rem;
+    border-radius: 10px 10px 0px 0px;
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
 }
 
-.show-summary{
-    margin: 1rem;
-    font-weight: 300;
+
+//  page 2 styles:
+.page2-container{
+    width: 100%;
+    padding: 2rem;
+    background-color: $black;
 }
 
-.show-info-container{
-    border: 1px solid black;
-    border-radius: .3rem;
+.specific-show-name{
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    margin: 1rem;
+}
+
+// when user click particular show:
+.overview{
+    width: 100%;
+    height: 100%;
     padding: 1rem;
-    margin: 2rem 1rem;
+    background-color: $black;
+}
+
+.overview-image{
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    margin: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.overview-summary{
+    color: rgba(255, 255, 255, 0.829);
+    margin: 1rem;
+}
+
+// extra details container:
+.show-details-container{
+    margin: 1rem;
+    background-color: $darkBlue;
+    border-radius: 10px;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
-    background-color: rgb(248, 245, 245);
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.801);
+    justify-content: space-evenly;
+}
 
-    .show-info-heading{
-        font-size: 1.5rem;
-        font-weight: 500;
-        text-transform: capitalize;
-        margin-bottom: 1rem;
+.show-details{
+    width: 100%;
+    height: 100%;
+    strong{
+        color: $purpleHaze;
     }
-
-    .show-info-values{
-        margin: .3rem;
-        font-weight: 300;
+    a{
+        color: gold;
+        overflow-x: hidden;
     }
-
-    .show-info-tags{
-        text-transform: capitalize;
-        font-weight: 500;
-    }
-
-    .site-link{
-        word-break: break-all;
-    }
+    overflow-wrap: break-word;
+    color: rgba(255, 255, 255, 0.89);
 }
 
 @import 'mediaquery';

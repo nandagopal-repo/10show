@@ -3,19 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10music</title>
+    <title>10shows</title>
+    <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="logo">10show</div>
-    <div class="search-container">
-        <input class="search-field" type="text" placeholder="shows" id="input">
-        <button class="search-btn" id="btn">search</button>
-    </div>
+<body id="homepage" class="page1-body">
+    <header>
+        <div>
+            <div class="logo">10shows</div>
+            <p class="credits">The below data are from <strong>tmdb api.</strong></p>
+        </div>
+        <div class="search-container">
+            <input class="search-field" type="text" placeholder="shows" id="input">
+            <button class="search-btn" id="btn">search</button>
+        </div>
+    </header>
+
+    
     <div class="loading" id="loading"></div>
-    <p class="credits">The below data are from <strong>tvmaze api.</strong></p>
-    <div class="section-container" id="wholeContainer"></div>
-    <p class="error-msg" id="error"></p>
+
+    <main id="page1Container" class="page1-container">
+        <div class="show-holding-container" id="showHoldingContainer">
+            <!--<div class="popular-show-container">
+                    <div class="show-container">
+                        <img class="show-img" src="download.jpg" alt="show image">
+                        <div class="show-contents">
+                            <h2 class="show-title">End Game</h2>
+                            <h2 class="show-rating">8</h2>
+                        </div>
+                    </div> 
+            </div> -->
+            
+        </div >
+        <div class="anime-holding-container" id="animeHoldingContainer"></div>
+       
+    </main>
+    
     <script src="script.js"></script>
 </body>
 </html>
