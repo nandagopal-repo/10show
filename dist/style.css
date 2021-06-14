@@ -59,7 +59,7 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -160,6 +160,7 @@ header {
   top: -10px;
   left: 50px;
   color: white;
+  text-align: center;
   font-size: 2rem;
 }
 
@@ -297,13 +298,13 @@ header {
 
 .page2-container {
   width: 100%;
-  padding: 2rem;
+  padding: 1rem;
   background-color: #0E050F;
 }
 
 .specific-show-name {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: white;
   margin: 1rem;
 }
@@ -316,7 +317,7 @@ header {
 }
 
 .overview-image {
-  width: 300px;
+  width: 200px;
   height: auto;
   border-radius: 10px;
   -o-object-fit: cover;
@@ -402,6 +403,7 @@ header {
     grid-gap: 1rem;
   }
   .overview-image {
+    width: 300px;
     -ms-grid-row: 1;
     -ms-grid-row-span: 2;
     grid-row: 1/3;

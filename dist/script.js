@@ -44,7 +44,7 @@ function displayShows(shows,container){
         if(show.poster_path === '' || show.poster_path === null) return; //edge cases:
         showContainer.classList.add('show-container');
         showContainer.innerHTML = `
-            <img class="show-img" src="https://image.tmdb.org/t/p/w500${imageSource}" alt="show image">
+            <img class="show-img" loading="lazy" src="https://image.tmdb.org/t/p/w500${imageSource}" alt="show image">
             <div class="show-contents">
                 <h2 class="show-title"  id="${show.id}">${show.name}</h2>
                 <h2 class="show-rating">${show.vote_average}</h2>
@@ -91,7 +91,7 @@ function displayParticularShow(show){
 
     let imageSource = show.poster_path;
     overviewContainer.innerHTML = `
-        <img class="overview-image" src="https://image.tmdb.org/t/p/w500${imageSource}" alt="show-image">
+        <img class="overview-image" loading="lazy" src="https://image.tmdb.org/t/p/w500${imageSource}" alt="show-image">
         <p class="overview-summary">${show.overview}</p>
         <div class="show-details-container">
             <h3 class="show-details"><strong>Premiered:  </strong>${show.first_air_date}</h3>

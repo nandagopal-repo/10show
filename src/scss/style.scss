@@ -15,7 +15,7 @@ header{
     background-color: $purpleHaze;
     padding: 1rem 3rem;
     display: flex;
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
@@ -98,6 +98,7 @@ header{
     top: -10px;
     left: 50px;
     color: white;
+    text-align: center;
     font-size: 2rem;
 }
 
@@ -205,13 +206,13 @@ header{
 //  page 2 styles:
 .page2-container{
     width: 100%;
-    padding: 2rem;
+    padding: 1rem;
     background-color: $black;
 }
 
 .specific-show-name{
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: white;
     margin: 1rem;
 }
@@ -225,7 +226,7 @@ header{
 }
 
 .overview-image{
-    width: 300px;
+    width: 200px;
     height: auto;
     border-radius: 10px;
     object-fit: cover;
