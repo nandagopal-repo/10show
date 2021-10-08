@@ -28,7 +28,6 @@ function renderShowsandAnime(results,location){
     removeAllChildNodes(location);    
     results.forEach(result => {
         const showContainer = document.createElement('div');
-        showContainer.setAttribute("id",`${result.id}`);
         let imageSource = result.poster_path;
         if(result.poster_path === '' || result.poster_path === null) return; //if image not found:
         showContainer.classList.add('show-container');
@@ -57,7 +56,9 @@ function renderShowsandAnime(results,location){
 
         // save show id to local storage:
         showContainer.addEventListener('click',(e) => {
-            if(e.target.className === 'show-container'){
+            if(e.target.className === 'show-img' ||
+               e.target.className === 'show-title' ||
+               e.target.className === 'show-rating'){
                 let ID = e.target.id;
                 localStorage.setItem('show_ID',ID);
                 window.location.assign('page2.html');

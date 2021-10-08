@@ -154,6 +154,7 @@ header{
     margin: 2rem;
     border-radius: 10px;
     background-color: $darkBlue;
+    cursor: pointer;
     transform: scale(.97);
     transition: transform 300ms ease;
 
@@ -161,9 +162,9 @@ header{
         transform: scale(1);
     }
 
-    &:hover .show-title{
-        color: plum;
-    }
+    // &:hover .show-title{
+    //     color: plum;
+    // }
 
 }
 
@@ -184,10 +185,10 @@ header{
     text-overflow: ellipsis;
     white-space: nowrap; 
     font-size: 1.2rem;
-    cursor: pointer;
-    text-decoration: underline;
-    text-decoration-color: $purpleHaze;
-    transition: color 200ms ease;
+    // cursor: pointer;
+    // text-decoration: underline;
+    // text-decoration-color: $purpleHaze;
+    // transition: color 200ms ease;
 }
 
 .show-rating{
