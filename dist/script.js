@@ -28,14 +28,15 @@ function renderShowsandAnime(results,location){
     removeAllChildNodes(location);    
     results.forEach(result => {
         const showContainer = document.createElement('div');
+        showContainer.setAttribute("id",`${result.id}`);
         let imageSource = result.poster_path;
         if(result.poster_path === '' || result.poster_path === null) return; //if image not found:
         showContainer.classList.add('show-container');
         showContainer.innerHTML = `
-            <img class="show-img" src="https://image.tmdb.org/t/p/w500${imageSource}" alt="show image">
+            <img class="show-img" id="${result.id}" src="https://image.tmdb.org/t/p/w500${imageSource}" alt="show image">
             <div class="show-contents">
                 <h2 class="show-title"  id="${result.id}">${result.name}</h2>
-                <h2 class="show-rating">${result.vote_average}</h2>
+                <h2 class="show-rating" id="${result.id}">${result.vote_average}</h2>
             </div>
         `;
         if(location.className === 'search-results-container'){
@@ -56,7 +57,7 @@ function renderShowsandAnime(results,location){
 
         // save show id to local storage:
         showContainer.addEventListener('click',(e) => {
-            if(e.target.className === 'show-title'){
+            if(e.target.className === 'show-container'){
                 let ID = e.target.id;
                 localStorage.setItem('show_ID',ID);
                 window.location.assign('page2.html');
